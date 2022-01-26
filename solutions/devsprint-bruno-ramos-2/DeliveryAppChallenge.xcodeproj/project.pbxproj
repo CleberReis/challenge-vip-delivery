@@ -67,6 +67,11 @@
 		98FC5AB42732BFC8002412EA /* MenuListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98FC5AB32732BFC8002412EA /* MenuListView.swift */; };
 		98FC5AB62732BFDA002412EA /* MenuCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98FC5AB52732BFDA002412EA /* MenuCellView.swift */; };
 		98FC5AB82732C1EF002412EA /* MenuItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98FC5AB72732C1EF002412EA /* MenuItemView.swift */; };
+		BF726E6F27A213620051AA17 /* SettingsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF726E6A27A213620051AA17 /* SettingsPresenter.swift */; };
+		BF726E7027A213620051AA17 /* SettingsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF726E6B27A213620051AA17 /* SettingsInteractor.swift */; };
+		BF726E7127A213620051AA17 /* SettingsUseCases.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF726E6C27A213620051AA17 /* SettingsUseCases.swift */; };
+		BF726E7227A213620051AA17 /* SettingsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF726E6D27A213620051AA17 /* SettingsRouter.swift */; };
+		BF726E7327A213620051AA17 /* SettingsConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF726E6E27A213620051AA17 /* SettingsConfigurator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -143,6 +148,11 @@
 		98FC5AB32732BFC8002412EA /* MenuListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuListView.swift; sourceTree = "<group>"; };
 		98FC5AB52732BFDA002412EA /* MenuCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCellView.swift; sourceTree = "<group>"; };
 		98FC5AB72732C1EF002412EA /* MenuItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItemView.swift; sourceTree = "<group>"; };
+		BF726E6A27A213620051AA17 /* SettingsPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsPresenter.swift; sourceTree = "<group>"; };
+		BF726E6B27A213620051AA17 /* SettingsInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsInteractor.swift; sourceTree = "<group>"; };
+		BF726E6C27A213620051AA17 /* SettingsUseCases.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsUseCases.swift; sourceTree = "<group>"; };
+		BF726E6D27A213620051AA17 /* SettingsRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsRouter.swift; sourceTree = "<group>"; };
+		BF726E6E27A213620051AA17 /* SettingsConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsConfigurator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -481,6 +491,11 @@
 		98F12979272F512900B88A87 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
+				BF726E6E27A213620051AA17 /* SettingsConfigurator.swift */,
+				BF726E6B27A213620051AA17 /* SettingsInteractor.swift */,
+				BF726E6A27A213620051AA17 /* SettingsPresenter.swift */,
+				BF726E6D27A213620051AA17 /* SettingsRouter.swift */,
+				BF726E6C27A213620051AA17 /* SettingsUseCases.swift */,
 				98F1297A272F51AE00B88A87 /* SettingsViewController.swift */,
 				98612706272F56AB0049403C /* SettingsView.swift */,
 			);
@@ -620,8 +635,11 @@
 				988ABC63279B178D009506DC /* SampleView.swift in Sources */,
 				98FC5AB82732C1EF002412EA /* MenuItemView.swift in Sources */,
 				988ABC70279B1A25009506DC /* DataModel.swift in Sources */,
+				BF726E6F27A213620051AA17 /* SettingsPresenter.swift in Sources */,
+				BF726E7227A213620051AA17 /* SettingsRouter.swift in Sources */,
 				98FC5AAE2732BA2E002412EA /* RestaurantInfoView.swift in Sources */,
 				98612707272F56AB0049403C /* SettingsView.swift in Sources */,
+				BF726E7027A213620051AA17 /* SettingsInteractor.swift in Sources */,
 				988ABC59279B15CA009506DC /* SampleFeatureFactory.swift in Sources */,
 				7BBAE3D127A0670400A84801 /* RestaurantDetailsRouter.swift in Sources */,
 				98F1297D272F51DE00B88A87 /* MenuItemViewController.swift in Sources */,
@@ -645,6 +663,7 @@
 				988ABC4D279B145F009506DC /* SampleApiDataSource.swift in Sources */,
 				988ABC6C279B198F009506DC /* SampleRepository.swift in Sources */,
 				988ABC5F279B16DE009506DC /* SampleRouter.swift in Sources */,
+				BF726E7327A213620051AA17 /* SettingsConfigurator.swift in Sources */,
 				988ABC51279B14BC009506DC /* SampleRequest.swift in Sources */,
 				98F1296C272F328200B88A87 /* CategoryListView.swift in Sources */,
 				98F1296E272F363200B88A87 /* HomeView.swift in Sources */,
@@ -660,6 +679,7 @@
 				988ABC74279B1CC0009506DC /* URLSessionProtocol.swift in Sources */,
 				98FC5AB62732BFDA002412EA /* MenuCellView.swift in Sources */,
 				983271BD272752AF0010C63A /* AppDelegate.swift in Sources */,
+				BF726E7127A213620051AA17 /* SettingsUseCases.swift in Sources */,
 				98F12968272F30E500B88A87 /* AddressView.swift in Sources */,
 				7BBAE3CF27A066EE00A84801 /* RestaurantDetailsUseCases.swift in Sources */,
 				983271BF272752AF0010C63A /* SceneDelegate.swift in Sources */,
@@ -831,7 +851,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = B8F644M47X;
+				DEVELOPMENT_TEAM = B5DZ82C4L6;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = DeliveryAppChallenge/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -859,7 +879,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = B8F644M47X;
+				DEVELOPMENT_TEAM = B5DZ82C4L6;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = DeliveryAppChallenge/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

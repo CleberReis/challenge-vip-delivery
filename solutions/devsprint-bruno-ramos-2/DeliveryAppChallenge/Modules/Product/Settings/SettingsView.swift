@@ -7,6 +7,12 @@
 
 import UIKit
 
+protocol SettingsViewProtocol: UIView {
+    func show(_ viewModel: SettingsView.ViewModel)
+}
+
+protocol SettingsViewDelegate: AnyObject {}
+
 private enum Sections: Int, CaseIterable {
     case name
     case email
@@ -28,6 +34,8 @@ private enum Sections: Int, CaseIterable {
 }
 
 class SettingsView: UIView {
+    weak var delegate: SettingsViewDelegate?
+    private var viewModel: ViewModel = .init(data: "")
 
     let cellIdentifier = "SettingsCell"
 
@@ -56,7 +64,17 @@ class SettingsView: UIView {
     }
 }
 
+extension SettingsView: SettingsViewProtocol {
+    func show(_ viewModel: ViewModel) {
+        self.viewModel = viewModel
+    }
+}
+
 extension SettingsView {
+    
+    struct ViewModel {
+        let data: String
+    }
 
     func addSubviews() {
 
