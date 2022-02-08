@@ -102,6 +102,10 @@
 		BF726E7127A213620051AA17 /* SettingsUseCases.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF726E6C27A213620051AA17 /* SettingsUseCases.swift */; };
 		BF726E7227A213620051AA17 /* SettingsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF726E6D27A213620051AA17 /* SettingsRouter.swift */; };
 		BF726E7327A213620051AA17 /* SettingsConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF726E6E27A213620051AA17 /* SettingsConfigurator.swift */; };
+		BFAC9F6027AB478B005FA172 /* SettingsWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFAC9F5F27AB478B005FA172 /* SettingsWorker.swift */; };
+		BFAC9F6327AB4ABD005FA172 /* SettingsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFAC9F6227AB4ABD005FA172 /* SettingsResponse.swift */; };
+		BFAC9F6527AB4B6C005FA172 /* SettingsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFAC9F6427AB4B6C005FA172 /* SettingsRequest.swift */; };
+		BFAC9F6827AB4DCC005FA172 /* SettingsWorkerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFAC9F6727AB4DCC005FA172 /* SettingsWorkerTests.swift */; };
 		D14E515527A7518F00A2E74E /* HomeUseCases.swift in Sources */ = {isa = PBXBuildFile; fileRef = D14E515427A7518F00A2E74E /* HomeUseCases.swift */; };
 		D14E515727A7560100A2E74E /* HomeWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D14E515627A7560100A2E74E /* HomeWorker.swift */; };
 		D14E515927A7582000A2E74E /* HomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D14E515827A7582000A2E74E /* HomeInteractor.swift */; };
@@ -220,6 +224,10 @@
 		BF726E6C27A213620051AA17 /* SettingsUseCases.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsUseCases.swift; sourceTree = "<group>"; };
 		BF726E6D27A213620051AA17 /* SettingsRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsRouter.swift; sourceTree = "<group>"; };
 		BF726E6E27A213620051AA17 /* SettingsConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsConfigurator.swift; sourceTree = "<group>"; };
+		BFAC9F5F27AB478B005FA172 /* SettingsWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsWorker.swift; sourceTree = "<group>"; };
+		BFAC9F6227AB4ABD005FA172 /* SettingsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsResponse.swift; sourceTree = "<group>"; };
+		BFAC9F6427AB4B6C005FA172 /* SettingsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsRequest.swift; sourceTree = "<group>"; };
+		BFAC9F6727AB4DCC005FA172 /* SettingsWorkerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsWorkerTests.swift; sourceTree = "<group>"; };
 		D14E515427A7518F00A2E74E /* HomeUseCases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeUseCases.swift; sourceTree = "<group>"; };
 		D14E515627A7560100A2E74E /* HomeWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeWorker.swift; sourceTree = "<group>"; };
 		D14E515827A7582000A2E74E /* HomeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInteractor.swift; sourceTree = "<group>"; };
@@ -259,6 +267,7 @@
 		70097E8227A0BA6C006A441C /* Product */ = {
 			isa = PBXGroup;
 			children = (
+				BFAC9F6627AB4DB6005FA172 /* Settings */,
 				93379EA427A207B9003A88E8 /* RestaurantList */,
 				70097E8327A0BA71006A441C /* RestaurantDetail */,
 			);
@@ -698,7 +707,9 @@
 		98F12979272F512900B88A87 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
+				BFAC9F6127AB4AAF005FA172 /* Data */,
 				BF726E6E27A213620051AA17 /* SettingsConfigurator.swift */,
+				BFAC9F5F27AB478B005FA172 /* SettingsWorker.swift */,
 				BF726E6B27A213620051AA17 /* SettingsInteractor.swift */,
 				BF726E6A27A213620051AA17 /* SettingsPresenter.swift */,
 				BF726E6D27A213620051AA17 /* SettingsRouter.swift */,
@@ -732,6 +743,23 @@
 				98FC5AB52732BFDA002412EA /* MenuCellView.swift */,
 			);
 			path = MenuListView;
+			sourceTree = "<group>";
+		};
+		BFAC9F6127AB4AAF005FA172 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				BFAC9F6227AB4ABD005FA172 /* SettingsResponse.swift */,
+				BFAC9F6427AB4B6C005FA172 /* SettingsRequest.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		BFAC9F6627AB4DB6005FA172 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				BFAC9F6727AB4DCC005FA172 /* SettingsWorkerTests.swift */,
+			);
+			path = Settings;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -849,8 +877,10 @@
 				98FC5AAE2732BA2E002412EA /* RestaurantInfoView.swift in Sources */,
 				98612707272F56AB0049403C /* SettingsView.swift in Sources */,
 				BF726E7027A213620051AA17 /* SettingsInteractor.swift in Sources */,
+				BFAC9F6327AB4ABD005FA172 /* SettingsResponse.swift in Sources */,
 				988ABC59279B15CA009506DC /* SampleFeatureFactory.swift in Sources */,
 				70F96A0727A9FE5D00EDF593 /* GetResutantDetailsUseCase.swift in Sources */,
+				BFAC9F6027AB478B005FA172 /* SettingsWorker.swift in Sources */,
 				7BBAE3D127A0670400A84801 /* RestaurantDetailsRouter.swift in Sources */,
 				98F1297D272F51DE00B88A87 /* MenuItemViewController.swift in Sources */,
 				988ABC65279B17F4009506DC /* ViewCode.swift in Sources */,
@@ -858,6 +888,7 @@
 				70F96A1127AA04F500EDF593 /* RestaurantDetailsDataSource.swift in Sources */,
 				988ABC5B279B15F4009506DC /* SamplePresenter.swift in Sources */,
 				98FC5AB12732BB7D002412EA /* RatingView.swift in Sources */,
+				BFAC9F6527AB4B6C005FA172 /* SettingsRequest.swift in Sources */,
 				988ABC4F279B14AE009506DC /* SampleRepositoryImpl.swift in Sources */,
 				98EA055B272A092F007B0228 /* AddressSearchViewController.swift in Sources */,
 				98612707272F56AB0049403C /* SettingsView.swift in Sources */,
@@ -940,6 +971,7 @@
 				70097E9227A0C8CA006A441C /* RestaurantDetailsPresentationLogicSpy.swift in Sources */,
 				93379EB627A38231003A88E8 /* RestaurantListPresentationLogicSpy.swift in Sources */,
 				93379EA627A2082F003A88E8 /* RestaurantListViewControllerTests.swift in Sources */,
+				BFAC9F6827AB4DCC005FA172 /* SettingsWorkerTests.swift in Sources */,
 				93379EC127A8ACA1003A88E8 /* ErrorDummy.swift in Sources */,
 				70097E8827A0BC50006A441C /* RestaurantDetailsViewProtocolSpy.swift in Sources */,
 				7BE3525427A21A1A00488D3A /* RestaurantDetailsResponse+Fixtures.swift in Sources */,

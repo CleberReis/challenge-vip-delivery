@@ -6,8 +6,7 @@
 //
 
 protocol SettingsPresentationLogic {
-    func presentData(response: Settings.FetchData.Response)
-    func presentError(response: Settings.Error.Response)
+    func presentFetchedSettings(response: Settings.FetchData.Response)
 }
 
 import Foundation
@@ -17,12 +16,5 @@ final class SettingsPresenter {
 }
 
 extension SettingsPresenter: SettingsPresentationLogic {
-    func presentData(response: Settings.FetchData.Response) {
-        let viewModel = response.data
-        viewController?.displayData(viewModel: .filled(data: viewModel))
-    }
-    
-    func presentError(response: Settings.Error.Response) {
-
-    }
+    func presentFetchedSettings(response: Settings.FetchData.Response) {}
 }

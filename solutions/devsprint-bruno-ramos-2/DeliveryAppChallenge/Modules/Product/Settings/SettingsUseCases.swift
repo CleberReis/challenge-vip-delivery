@@ -9,28 +9,14 @@ import Foundation
 
 enum Settings {
     enum FetchData {
-        struct Request {
-            
+        struct Request {}
+        
+        enum Response {
+            case success(SettingsResponse)
+            case failure(Error)
         }
         
-        struct Response {
-            let data: String
-        }
-        
-        enum ViewModel {
-            case filled(data: String)
-            case retry
-            case error
-        }
+        struct viewModel {}
     }
     
-    enum Error {
-        struct Response {
-            let error: Swift.Error
-        }
-        
-        struct ViewModel {
-            let message: String
-        }
-    }
 }

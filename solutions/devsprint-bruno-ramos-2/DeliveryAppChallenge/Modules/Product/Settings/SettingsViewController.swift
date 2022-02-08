@@ -8,7 +8,7 @@
 import UIKit
 
 protocol SettingsDisplayLogic: AnyObject {
-    func displayData(viewModel: Settings.FetchData.ViewModel)
+    func displayData(viewModel: Settings.FetchData.Response)
 }
 
 final class SettingsViewController: UIViewController {
@@ -50,7 +50,7 @@ final class SettingsViewController: UIViewController {
 }
 
 extension SettingsViewController: SettingsDisplayLogic {
-    func displayData(viewModel: Settings.FetchData.ViewModel) {
+    func displayData(viewModel: Settings.FetchData.Response) {
         
     }
 }

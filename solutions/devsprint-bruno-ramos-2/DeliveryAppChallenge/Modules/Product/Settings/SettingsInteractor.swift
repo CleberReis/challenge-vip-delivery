@@ -18,28 +18,28 @@ protocol SettingsDataStore {
 
 final class SettingsInteractor: SettingsDataStore {
     private let presenter: SettingsPresentationLogic
-    private let getData: GetSampleUseCase
+    private let worker: SettingsWorking // worker
     
     init(
         presenter: SettingsPresentationLogic,
-        getData: GetSampleUseCase
+        worker: SettingsWorking
     ) {
         self.presenter = presenter
-        self.getData = getData
+        self.worker = worker
     }
 }
 
 extension SettingsInteractor: SettingsBusinessLogic {
     
     func fetchData(request: Settings.FetchData.Request) {
-        getData.execute { [weak self] result in
+        worker.fetchSettingsData { [weak self] result in
             guard let self = self else { return }
             
             switch result {
                 case .success(let data):
-                    self.presenter.presentData(response: .init(data: data.data))
+                    self.presenter.presentFetchedSettings(response: .success(data))
                 case .failure(let error):
-                    self.presenter.presentError(response: .init(error: error))
+                    self.presenter.presentFetchedSettings(response: .failure(error))
             }
         }
     }
