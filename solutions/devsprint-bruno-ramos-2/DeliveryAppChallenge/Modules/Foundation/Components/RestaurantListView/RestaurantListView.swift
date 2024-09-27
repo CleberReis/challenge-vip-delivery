@@ -7,14 +7,27 @@
 
 import UIKit
 
+protocol RestaurantListViewProtocol: UIView {
+    func reloadTableViewData()
+}
+
+protocol RestaurantListViewDelegate: AnyObject {
+    func didSelectRestaurant(restaurant: RestaurantListResponse)
+}
+
 class RestaurantListView: UIView {
+    
+    // MARK: - Properties
+    weak var delegate: RestaurantListViewDelegate?
 
     static let cellSize = CGFloat(82)
-
     private let cellIdentifier = "RestaurantCellIdentifier"
+    
+    // MARK: - ViewModel
+    struct ViewModel {}
 
+    // MARK: - UI Components
     lazy var tableView: UITableView = {
-
         let tableView = UITableView(frame: .zero)
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.register(RestaurantCellView.self, forCellReuseIdentifier: self.cellIdentifier)
@@ -23,55 +36,54 @@ class RestaurantListView: UIView {
         return tableView
     }()
 
+    // MARK: - Initializers
     init() {
         super.init(frame: .zero)
-
-        backgroundColor = .white
-        addSubviews()
-        configureConstraints()
-
-        tableView.reloadData()
+        setup()
     }
 
+    @available(*, unavailable)
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 }
 
-extension RestaurantListView {
-
-    func addSubviews() {
-
+// MARK: - ViewCode Extension
+extension RestaurantListView: ViewCode {
+    
+    func setupComponents() {
         addSubview(tableView)
     }
-
-    func configureConstraints() {
-
+    
+    func setupConstraints() {
         NSLayoutConstraint.activate([
-
             tableView.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor),
             tableView.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor),
             tableView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
             tableView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor),
         ])
     }
+    
+    func setupExtraConfiguration() {
+        backgroundColor = .white
+    }
 }
 
+// MARK: - TableViewDataSource
 extension RestaurantListView: UITableViewDataSource {
 
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-
         return 10
     }
 
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! RestaurantCellView
 
         return cell
     }
 }
 
+// MARK: - TableViewDelegate
 extension RestaurantListView: UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -79,6 +91,17 @@ extension RestaurantListView: UITableViewDelegate {
     }
 
     public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        delegate?.didSelectRestaurant(restaurant: .init(
+            name: "Benjamin a Padaria ",
+            category: "Padaria",
+            deliveryTime: .init(min: 10, max: 20))
+        )
+    }
+}
 
+// MARK: - ViewProtocol
+extension RestaurantListView: RestaurantListViewProtocol {
+    func reloadTableViewData() {
+        tableView.reloadData()
     }
 }
